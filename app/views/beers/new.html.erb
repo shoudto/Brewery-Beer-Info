@@ -1,0 +1,40 @@
+<h1>Add a new beer!</h1>
+
+<%= form_for (@beer) do |f|%>
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+    <br>
+    <div>
+        <%= f.label :style %>
+        <%= f.text_field :style %>
+    </div>
+    <br>
+    <div>
+        <%= f.label :alc %>
+        <%= f.text_field :alc %>
+    </div>
+    <br>
+    <div>
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+    </div>
+
+        <p>Select a brewery that already exists:</p>
+    <div>
+        <%= f.collection_select :brewery_id, Brewery.all, :id, :name %>
+    </div>
+
+        <p>Or add a new Brewery:</p>
+        
+    <div>
+        <%= f.fields_for :brewery do |b| %>
+            <%= b.label :name %>
+            <%= b.text_field :name%>
+        <% end %>
+    </div>
+    <br>
+    <%= f.submit %>
+<% end %>
+

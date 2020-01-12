@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+User
+- username:string
+- password_digest:string
 
-Things you may want to cover:
+Beer
 
-* Ruby version
+- name:string
+- style:string
+- alc:string 
+- description
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Brewery
+- name:string 
+- location:string 
+- rating:string  

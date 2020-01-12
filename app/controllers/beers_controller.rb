@@ -6,13 +6,22 @@ class BeersController < ApplicationController
 
     def create
         @beer = Beer.new(beer_params)
+        @beer.user_id = session[:user_id]
 
         if @beer.save  
-            redirect_to ice_cream_path(@beer)
+            redirect_to beer_path(@beer)
         else 
             render :new 
         end 
     end 
+
+    def index
+        @beers = Beer.all
+    end 
+
+    def show 
+        @beer = Beer.find_by_id(params[:id])
+    end
 
     private 
 

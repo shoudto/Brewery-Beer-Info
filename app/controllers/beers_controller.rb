@@ -8,7 +8,7 @@ class BeersController < ApplicationController
         @beer = Beer.new(beer_params)
         @beer.user_id = session[:user_id]
 
-        if @beer.save  
+        if @beer.save 
             redirect_to beer_path(@beer)
         else 
             render :new 
@@ -26,6 +26,6 @@ class BeersController < ApplicationController
     private 
 
     def beer_params
-        params.require(:beer).permit(:name, :style, :alc, :description, brewery_attributes: [:name])
+        params.require(:beer).permit(:name, :style, :alc, :description, :brewery_id, brewery_attributes: [:name])
     end 
 end

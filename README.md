@@ -1,6 +1,6 @@
 # README
 
-User
+<!-- User
 - username:string
 - password_digest:string
 
@@ -14,4 +14,12 @@ Beer
 Brewery
 - name:string 
 - location:string 
-- rating:string  
+
+Reviews
+
+- Beer_id
+- User_id
+- Ratings
+- Title
+- Discription
+ -->
